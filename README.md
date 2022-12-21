@@ -53,6 +53,7 @@
    }
 
    console.log(pessoaCopia)
+   
  
  <i>Código Declarativo - se preocupa em como a ação vai ser executada</i>
 
