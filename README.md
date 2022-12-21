@@ -22,3 +22,5 @@
         link: obertLinkPerfil(username)
       }
     } 
+
+<strong>A cima temos uma função que retorna as duas funções a cima (um componente grande que utiliza outros componentes pequenos)</strong>
