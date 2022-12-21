@@ -28,16 +28,19 @@
 
 <h4>Componentes Separados</h4>
 
+```
 <main/>
 <article/>
 <sidebar/>
-
+```
 <h4>Componentes Combinados</h4>
 
+```
 <main>
 <article/>
 <sidebar/>
 </main>
+```
 
 <h4>Natureza Declarativa</h4>
 
