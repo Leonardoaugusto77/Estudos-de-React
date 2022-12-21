@@ -1,11 +1,11 @@
-<h1>Começando os estudos de React js</h2>
+## Começando os estudos de React js
 
 <p>O React é um lib desenvolvida pelo Facebook, ela roda JavaScript no servidor e retorna as páginas prontas, ele utiliza apenas componentes que sofrem alterações!    
 </p>
 
-<h4>O Modelo composicional</h4>
+## O Modelo composicional
 
-<p>O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex: menus, slider, navbars e etc... </p>
+## O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex: menus, slider, navbars e etc...
 
  
     function obertLinkPerfil(username){
@@ -45,6 +45,7 @@
 
 <i>Imperativo - se preocupa em explicar como a ação é executada passo a passo</i>
 
+`
    const pessoa = ['Leonardo', 'Arthur', 'Gerald']
    const pessoaCopia = []
 
@@ -52,15 +53,14 @@
     pessoaCopia[i] = pessoa[i] + '2'
    }
 
-   console.log(pessoaCopia)
-   
+   console.log(pessoaCopia)`
+`
  
  <i>Código Declarativo - se preocupa em como a ação vai ser executada</i>
-
-   const pessoa = ['Leonardo', 'Arthur', 'Gerald']
+`  const pessoa = ['Leonardo', 'Arthur', 'Gerald']
    const pessoaCopia = pessoa.map(nome => nome + ' 2')
    console.log(pessoaCopia)
-
+`
 
 
 
