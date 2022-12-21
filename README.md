@@ -45,7 +45,7 @@
 
 <i>Imperativo - se preocupa em explicar como a ação é executada passo a passo</i>
 
-`  
+```  
    const pessoa = ['Leonardo', 'Arthur', 'Gerald']
    const pessoaCopia = []
     
@@ -56,16 +56,17 @@
 
 
    console.log(pessoaCopia)
-`
+```
  
  <i>Código Declarativo - se preocupa em como a ação vai ser executada</i>
 
-`  const pessoa = ['Leonardo', 'Arthur', 'Gerald']
+```
+   const pessoa = ['Leonardo', 'Arthur', 'Gerald']
 
    const pessoaCopia = pessoa.map(nome => nome + ' 2')
 
    console.log(pessoaCopia)
-`
+```
 
 
 
