@@ -1,4 +1,4 @@
-## Começando os estudos de React js
+# Começando os estudos de React js
 
 O React é um lib desenvolvida pelo Facebook, ela roda JavaScript no servidor e retorna as páginas prontas, ele utiliza apenas componentes que sofrem alterações!
 
@@ -22,17 +22,17 @@ O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex
       }
     } 
 
-<strong>A cima temos uma função que retorna as duas funções a cima <br>
+<strong>A cima temos uma função que retorna as duas funções<br>
 (um componente grande que utiliza outros componentes pequenos)</strong>
 
-<h4>Componentes Separados</h4>
+### Componentes Separados
 
 ```
 <main/>
 <article/>
 <sidebar/>
 ```
-<h4>Componentes Combinados</h4>
+### Componentes Combinados
 
 ```
 <main>
@@ -41,7 +41,7 @@ O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex
 </main>
 ```
 
-<h4>Natureza Declarativa</h4>
+### Natureza Declarativa
 
 <strong>Código Imperativo</strong>
 
