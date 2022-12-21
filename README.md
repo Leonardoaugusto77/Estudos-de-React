@@ -45,7 +45,7 @@ O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex
 
 <strong>Código Imperativo</strong>
 
-<i>Imperativo - se preocupa em explicar como a ação é executada passo a passo</i>
+<i>Código Imperativo - se preocupa em explicar como a ação é executada passo a passo</i>
 
 ```  
    const pessoa = ['Leonardo', 'Arthur', 'Gerald']
@@ -70,5 +70,17 @@ O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex
    console.log(pessoaCopia)
 ```
 
+## Fluxo de Dados unidirecional
 
+O componente filho não consegue alterar os dados do componente pai, somente consegue ler. Caso as informações
+precissem ser alteradas no componente principal, ele ira chamar um método dentro do pai que faz essa alteração.
+
+### Instalando o ambiente de maneira nativa e iniciando
+
+```
+    npmx create-react-app my-app 
+    cd my-app 
+    npm run start
+
+```
 
