@@ -7,7 +7,7 @@
 
 <p>O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex: menus, slider, navbars e etc... </p>
 
-` 
+ 
     function obertLinkPerfil(username){
       return 'https://github.com/' + username
     }
@@ -21,4 +21,4 @@
         Image : obertDadosPerfil(username),
         link: obertLinkPerfil(username)
       }
-    } ` 
+    } 
