@@ -1,6 +1,6 @@
 ## Começando os estudos de React js
 
-<p>O React é um lib desenvolvida pelo Facebook, ela roda JavaScript no servidor e retorna as páginas prontas, ele utiliza apenas componentes que sofrem alterações!</p>
+O React é um lib desenvolvida pelo Facebook, ela roda JavaScript no servidor e retorna as páginas prontas, ele utiliza apenas componentes que sofrem alterações!
 
 ## O Modelo composicional
 
