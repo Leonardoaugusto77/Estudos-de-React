@@ -4,7 +4,7 @@ O React é um lib desenvolvida pelo Facebook, ela roda JavaScript no servidor e 
 
 ## O Modelo composicional
 
-## O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex: menus, slider, navbars e etc...
+O React trabalha com componentes ou seja ele cria peças de 'quebra cabeça', ex: menus, slider, navbars e etc...
 
  
     function obertLinkPerfil(username){
