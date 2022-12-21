@@ -23,5 +23,22 @@
       }
     } 
 
-<strong>A cima temos uma função que retorna as duas funções a cima
+<strong>A cima temos uma função que retorna as duas funções a cima <br>
 (um componente grande que utiliza outros componentes pequenos)</strong>
+
+<h4>Componentes Separados</h4>
+
+<main/>
+<article/>
+<sidebar/>
+
+<h4>Componentes Combinados</h4>
+
+<main>
+<article/>
+<sidebar/>
+</main>
+
+
+
+
