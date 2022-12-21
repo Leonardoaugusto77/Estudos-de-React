@@ -77,7 +77,8 @@ precissem ser alteradas no componente principal, ele ira chamar um método dentr
 
 ### Instalando o ambiente de maneira nativa e iniciando
 
-``` npmx create-react-app my-app 
+``` 
+    npmx create-react-app my-app 
     cd my-app 
     npm run start
 ```
