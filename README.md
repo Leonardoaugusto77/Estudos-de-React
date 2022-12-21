@@ -28,16 +28,16 @@
 
 <h4>Componentes Separados</h4>
 
-<main/>
+`<main/>
 <article/>
-<sidebar/>
+<sidebar/>`
 
 <h4>Componentes Combinados</h4>
 
-<main>
+`<main>
 <article/>
 <sidebar/>
-</main>
+</main>`
 
 
 
