@@ -1,5 +1,5 @@
 import React from "react";
-import Print from './Componentes/Imgs/print.png'
+import Print from './Componentes/Imgs/print.png
 
 export default () => {
 
