@@ -10,7 +10,8 @@ por isso é utilizado um 'Transpilador' conhecido como Babel.
 #### Expressão
 
 Quando formos usar o JavaScript no HTML5 usamos as chaves `{}`, todas as váriaveis e funções são 
-adicionadas fora do `return`
+adicionadas fora do `return`, também não necessario utilizar a templete string de maneira intregral 
+dessa maneira `${Nome}`
 
 ![img](Screenshot_7.png)
 
