@@ -32,11 +32,20 @@ ID root
 
 ### Como funciona o App.js?
 
-Dentro de Public temos o app.js que é renderizado no index.js ele é nosso componente pai
+Dentro de SRC temos o app.js que é renderizado no index.js ele é nosso componente pai
 sua estrutura pode ser feita de duas maneiras mas a mais rápida e prática e usar Arrow functions
-para fazer o returno das informações para o index,js que está fazendo a sua chamada!
+para fazer o returno das informações para o index.js que está fazendo a sua chamada!
 
 ![img](Screenshot_4.png)
+
+
+### Detalhes para tomar cuidar
+
+Só é possivel retornar um componente ou elemento html dentro de App.js por isso normalmente usamos 
+<></> que é um tipo de div e dentro delas adicionamos os nossos componentes ou elementos. Além disso o React
+não permite tags não finalizadas ex: `<input>`, o metodo correto é `<input/>` com a barra no final!
+
+![img](Screenshot_5.png)
 
 
 
