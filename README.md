@@ -29,3 +29,15 @@ root.render(
 ```
 Essa estrutura faz a renderização no index.html dentro de uma DIV com
 ID root
+
+### Como funciona o App.js?
+
+Dentro de Public temos o app.js que é renderizado no index.js ele é nosso componente pai
+sua estrutura pode ser feita de duas maneiras mas a mais rápida e prática e usar Arrow functions
+para fazer o returno das informações para o index,js que está fazendo a sua chamada!
+
+![img](Screenshot_4.png)
+
+
+
+
