@@ -22,3 +22,11 @@ Podemos usar a concatenação ou adiconar um texto fora da expressão `{}`
 É por ultimo podemos retornar textos atráves de funções
 
 ![img](Screenshot_9.png)
+
+
+### Inserindo Imagens na nossa Aplicação React
+ 
+Para trabalhar com importação de imagens vamos criar uma pasta dentro de SRC (que é o nosso contéudo interno)
+com o nome desejado.
+
+![img](Screenshot_10.png)

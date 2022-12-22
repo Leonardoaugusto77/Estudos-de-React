@@ -1,4 +1,5 @@
 import React from "react";
+import Print from './Componentes/Imgs/print.png'
 
 export default () => {
 
@@ -12,6 +13,10 @@ export default () => {
     <>
       <h2>Funcionario: {Nome()}</h2>
       <p>{'Profissão: ' + Profissao}</p>
+
+      <br/>
+
+      <img src={Print} />
     </>
   )
 }
