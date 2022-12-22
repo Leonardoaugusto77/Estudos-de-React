@@ -17,3 +17,7 @@ adicionadas fora do `return`
 Podemos usar a concatenação ou adiconar um texto fora da expressão `{}`
 
 ![img](Screenshot_8.png)
+
+É por ultimo podemos retornar textos atráves de funções
+
+![img](Screenshot_9.png)
