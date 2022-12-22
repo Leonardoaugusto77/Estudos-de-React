@@ -8,6 +8,6 @@ no nosso App.jss é interessante criar uma pasta dentro de SRC com os componente
 
 ![img](Screenshot_14.png)
 
-#### Componente Corpo
+### Componente Corpo
 
 ![img](Screenshot_15.png)
