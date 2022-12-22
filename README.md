@@ -2,4 +2,4 @@
 
 ### Node Modules
 
-<img src="Screenshot_1.png" alt="">
+![Node](Screenshot_1.png)
