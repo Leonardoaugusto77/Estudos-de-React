@@ -7,8 +7,8 @@ export default () => {
 
   return(
     <>
-      <h2>{Nome}</h2>
-      <p>{Profissao}</p>
+      <h2>Funcionario: {Nome}</h2>
+      <p>{'Profissão: ' + Profissao}</p>
     </>
   )
 }

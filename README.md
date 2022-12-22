@@ -9,7 +9,11 @@ por isso é utilizado um 'Transpilador' conhecido como Babel.
 
 #### Expressão
 
-Quando formos usar o JavaScript no html usamos as chaves `{}`, todas as váriaveis e funções são 
+Quando formos usar o JavaScript no HTML5 usamos as chaves `{}`, todas as váriaveis e funções são 
 adicionadas fora do `return`
 
 ![img](Screenshot_7.png)
+
+Podemos usar a concatenação ou adiconar um texto fora da expressão `{}`
+
+![img](Screenshot_8.png)
