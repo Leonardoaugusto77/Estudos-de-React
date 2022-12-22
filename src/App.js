@@ -2,15 +2,13 @@ import React from "react";
 
 export default () => {
 
+  const Nome = 'Leonardo Augusto'
+  const Profissao = 'Desenvolvedor Front - end'
+
   return(
     <>
-      <h2>Leonardo Augusto</h2>
-      <p>Desenvolvedor Front - end</p>
-      
-
-      <br/>
-
-      <input type='text'/>
+      <h2>{Nome}</h2>
+      <p>{Profissao}</p>
     </>
   )
 }
