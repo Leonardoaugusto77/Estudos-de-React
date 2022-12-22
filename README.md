@@ -9,31 +9,31 @@ por isso é utilizado um 'Transpilador' conhecido como Babel.
 
 #### Expressão
 
-Quando formos usar o JavaScript no HTML5 usamos as chaves `{}`, todas as váriaveis e funções são 
-adicionadas fora do `return`, também não necessario utilizar a templete string de maneira intregral 
+Quando formos usar o JavaScript no HTML5 usamos as chaves `{}`, todas as variáveis e funções são 
+adicionadas fora do `return`, também não necessário utilizar a templete string de maneira integral 
 dessa maneira `${Nome}`
 
 ![img](Screenshot_7.png)
 
-Podemos usar a concatenação ou adiconar um texto fora da expressão `{}`
+Podemos usar a concatenação ou adicionar um texto fora da expressão `{}`
 
 ![img](Screenshot_8.png)
 
-É por ultimo podemos retornar textos atráves de funções
+É por último podemos retornar textos através de funções
 
 ![img](Screenshot_9.png)
 
 
 ### Inserindo Imagens na nossa Aplicação React
  
-Para trabalhar com importação de imagens vamos criar uma pasta dentro de SRC (que é o nosso contéudo interno)
+Para trabalhar com importação de imagens vamos criar uma pasta dentro de SRC (sendo o nosso conteúdo interno)
 com o nome desejado.
 
 ![img](Screenshot_10.png)
 
-Agora dentro de App.js vamos fazer o import da imagem, para importar vamos usar a seguinte sitaxe:
+Agora dentro de App.js vamos fazer o import da imagem, para importar vamos usar a seguinte sintaxe:
 `import Print from'./Componentes/Imgs print.png'` 
-e dentro de `<img src={Print} />` vamos chamar atráves das `{}` o nome que foi dado para o componente que possui a nossa `<img/>`
+e dentro de `<img src={Print} />` vamos chamar através das `{}` o nome dado para o componente que possui a nossa `<img/>`
 
 ![img](Screenshot_11.png)
 
