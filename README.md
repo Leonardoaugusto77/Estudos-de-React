@@ -34,7 +34,7 @@ Essa estrutura faz a renderização no index.html dentro da DIV com ID root
 
 Dentro de SRC temos o app.js que é renderizado no index.js ele é nosso componente pai
 sua estrutura pode ser feita de duas maneiras, mas a mais rápida e prática e usar Arrow functions
-para fazer o returno das informações para o index.js que está fazendo a sua chamada!
+para fazer o retorno das informações para o index.js que está fazendo a sua chamada!
 
 ![img](Screenshot_4.png)
 ### Detalhes para tomar cuidar
