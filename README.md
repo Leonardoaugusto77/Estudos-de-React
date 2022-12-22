@@ -31,10 +31,7 @@ com o nome desejado.
 
 ![img](Screenshot_10.png)
 
-Agora dentro de App.js vamos fazer o import da imagem, para importar vamos
-usar a seguinte sitaxe `import Print from './Componentes/Imgs/print.png'` e
-dentro de `<img src={Print} />` vamos chamar atráves das `{}` o nome que foi dado
-para o componente que possui a nossa `<img/>`
+Agora dentro de App.js vamos fazer o import da imagem, para importar vamos usar a seguinte sitaxe `import Print from './Componentes/Imgs/print.png'` e dentro de `<img src={Print} />` vamos chamar atráves das `{}` o nome que foi dado para o componente que possui a nossa `<img/>`
 
 ![img](Screenshot_11.png)
 
