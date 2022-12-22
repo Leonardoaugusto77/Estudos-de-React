@@ -11,3 +11,7 @@ no nosso App.jss é interessante criar uma pasta dentro de SRC com os componente
 ### Componente Corpo
 
 ![img](Screenshot_15.png)
+
+### Importando os componentes no Pai
+
+![img](Screenshot_16.png)
