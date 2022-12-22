@@ -30,6 +30,8 @@ root.render(
 Essa estrutura faz a renderização no index.html dentro de uma DIV com
 ID root
 
+![img](Screenshot_6.png)
+
 ### Como funciona o App.js?
 
 Dentro de SRC temos o app.js que é renderizado no index.js ele é nosso componente pai
