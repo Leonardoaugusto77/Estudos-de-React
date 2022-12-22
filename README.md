@@ -11,3 +11,5 @@ por isso é utilizado um 'Transpilador' conhecido como Babel.
 
 Quando formos usar o JavaScript no html usamos as chaves `{}`, todas as váriaveis e funções são 
 adicionadas fora do `return`
+
+![img](Screenshot_7.png)
