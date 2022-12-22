@@ -5,7 +5,8 @@ export default () => {
   return(
     <>
         <header>
-            <img src={Logo}/>
+            <img src={Logo} className='Rick'/>
+            <h4>Rick and Morty</h4>
         </header>
     </>
   )

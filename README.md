@@ -1,1 +1,6 @@
 ## Criando componentes no React js
+
+Podemos criar componetes de maneira separada, para usarmos temos que exporta - los 
+no nosso App.jss é interessante criar uma pasta dentro de SRC com os componentes da nossa aplicação
+
+![img](Screenshot_13.png)
