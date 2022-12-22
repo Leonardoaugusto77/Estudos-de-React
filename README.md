@@ -2,4 +2,4 @@
 
 ### Node Modules
 
-![Node](Screenshot_1.png)
+![img](Screenshot_1.png)
