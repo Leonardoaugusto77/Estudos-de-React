@@ -22,7 +22,12 @@ export default () => {
 ```
 
 A diferença de usar inline do React é que em casos que usamos - para seperar uma propriedade por exemplo o font-size, no
-React usamos `style={{fontSize:'25px'}} `
+React usamos dessa maneira:
 
+`style={{fontSize:'25px'}} `
+
+outros detalhes para se destacar são que não usamos ; para indicar que a propriedade acabou e sim virgula (,)
+
+`<h2 style={{color:'f00', fontSize:'25px'}} >Leonardo Augusto</h2>`
 
 
