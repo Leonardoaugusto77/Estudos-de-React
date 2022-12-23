@@ -1,8 +1,8 @@
-## Trabalhando com PROPS no React 
+## Trabalhando com Props no React 
 
 Props são uma maneira de enviarmos valores ou funções para outros componentes. Quando o React vê um elemento represes antado
 um componente defino pelo usuário, ele passa atributos do JSX e componentes em si, vamos utilizar os atributos do componente 
-os capturando através do PROPS.
+os capturando através do Props.
 
 ![img](Screenshot_1.png)
 ### O que é um Componente de função?
@@ -13,8 +13,8 @@ visual no UI da nossa aplicação e afins!
 
 ### Utilizando Props
 
-Para usarmos o Props vamos passar atributos (propriedades) para o componenete que está dentro do nosso App.js 
-usamos a seguinte sitaxe:
+Para usarmos o Props vamos passar atributos (propriedades) para o componente que está dentro do nosso App.js 
+usamos a seguinte sintaxe:
 
 ``` 
 import React from "react";
@@ -30,12 +30,12 @@ export default () => {
 }
 ```
 
-Agora dentro de dados para termos acesso ao esse atributos vamos usar `{props.nomedoatributo}`
+Agora dentro de dados para termos acesso a esse atributo vamos usar `{props.nomedoatributo}`
 
 ![img](Screenshot_2.png)
 
 
-### Passando funções e váriaveis para o Props
+### Passando funções e variáveis para o Props
 
 ![img](Screenshot_3.png)
 
