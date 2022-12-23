@@ -1,6 +1,6 @@
 ## Trabalhando com Props no React 
 
-Props são uma maneira de enviarmos valores ou funções para outros componentes. Quando o React vê um elemento representado antado
+Props são uma maneira de enviarmos valores ou funções para outros componentes. Quando o React vê um elemento representado
 um componente defino pelo usuário, ele passa atributos do JSX e componentes em si, vamos utilizar os atributos do componente 
 os capturando através do Props.
 
@@ -37,7 +37,25 @@ Agora dentro de dados para termos acesso a esse atributo vamos usar `{props.nome
 
 ### Passando funções e variáveis para o Props
 
-![img](Screenshot_3.png)
+```
+import React from "react";
+import Dados from "./Componentes/Dados";
+
+export default () => {
+
+  const idade = () =>{
+    return '21 anos'
+  }
+
+  const techs = 'React js & JavaScript'
+
+  return(
+    <>
+     <Dados nome='Leonardo Augusto' idade={idade()} profissao='Desenvolvedor Front - end' techs={techs} contato = '@Project_Heisen'/>
+    </>
+  )
+}
+```
 
 ![img](Screenshot_4.png)
 
