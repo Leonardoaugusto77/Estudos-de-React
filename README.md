@@ -4,7 +4,19 @@ Props são uma maneira de enviarmos valores ou funções para outros componentes
 um componente defino pelo usuário, ele passa atributos do JSX e componentes em si, vamos utilizar os atributos do componente 
 os capturando através do Props.
 
-![img](Screenshot_1.png)
+```
+import React from "react";
+
+export default (props) => {
+    return(
+        <section>
+            <p>Nome: </p>
+            <p>Profissão: </p>
+            <p>Contato: </p>
+        </section>
+    )
+}
+```
 ### O que é um Componente de função?
 
 É quando um componente em específico retorna algum tipo de função como um slider, controle de acesso, uma alteração
@@ -38,9 +50,9 @@ import React from "react";
 export default (props) => {
     return(
         <section>
-            <p>Nome: </p>
-            <p>Profissão: </p>
-            <p>Contato: </p>
+            <p>Nome: {props.nome}</p>
+            <p>Profissão: {props.profissao}</p>
+            <p>Contato: {props.contato}</p>
         </section>
     )
 }
