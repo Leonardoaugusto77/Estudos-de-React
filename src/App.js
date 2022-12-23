@@ -1,19 +1,15 @@
 import React from "react";
+import Relogio from "./Componentes/Relogio";
+export default () =>{
 
-export default () => {
+  return(
+    <>
 
-  const destaque = {
-    color:'blue',
-    fontSize:'20px'
-  }
+      <div className="Container">
+        <Relogio/>
+      </div>
 
-    return(
-       <>
-         <div className='Container'>
-
-          <h2 style={{color:'f00', fontSize:'25px'}} >Leonardo Augusto</h2>
-          <strong>Desenvolvedor <span style={destaque}>Front - end</span></strong>
-         </div>
-       </> 
-    )
+      <p style={{textAlign:'center'}}>Apenas o Componente Relogio irá ser atualizado!</p>
+    </>
+  )
 }
