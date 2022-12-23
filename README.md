@@ -96,7 +96,6 @@ export default (props) => {
     )
 }
 ```
-
 ### Criando uma função simples de somar com Props
 
 ```
@@ -151,9 +150,6 @@ export default (props) => {
             </div>
         
         </section>
-
-
-
     )
 }
 
