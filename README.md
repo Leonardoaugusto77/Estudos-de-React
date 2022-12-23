@@ -32,7 +32,19 @@ export default () => {
 
 Agora dentro de dados para termos acesso a esse atributo vamos usar `{props.nomedoatributo}`
 
-![img](Screenshot_2.png)
+```
+import React from "react";
+
+export default (props) => {
+    return(
+        <section>
+            <p>Nome: </p>
+            <p>Profissão: </p>
+            <p>Contato: </p>
+        </section>
+    )
+}
+```
 
 
 ### Passando funções e variáveis para o Props
