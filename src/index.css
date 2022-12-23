@@ -1,1 +1,15 @@
 
+.Container{
+    width: 500px;
+    height: 70vh;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+
+    border-radius: 25px;
+}
+
