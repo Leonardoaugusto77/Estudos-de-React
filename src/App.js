@@ -1,17 +1,13 @@
 import React from "react";
-import Dados from "./Componentes/Dados";
 
 export default () => {
+    return(
+       <>
+         <div className='Container'>
 
-  const idade = () =>{
-    return '21 anos'
-  }
-
-  const techs = 'React js & JavaScript'
-
-  return(
-    <>
-     <Dados nome='Leonardo Augusto' idade={idade()} profissao='Desenvolvedor Front - end' techs={techs} contato = '@Project_Heisen'/>
-    </>
-  )
+          <h2 style={{color:'f00', fontSize:'25px'}} >Leonardo Augusto</h2>
+          <strong>Desenvolvedor <span>Front - end</span></strong>
+         </div>
+       </> 
+    )
 }
