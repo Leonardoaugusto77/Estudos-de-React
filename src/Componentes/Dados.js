@@ -3,9 +3,9 @@ import React from "react";
 export default (props) => {
     return(
         <section>
-            <p>Nome: </p>
-            <p>Profissão: </p>
-            <p>Contato: </p>
+            <p>Nome: {props.nome}</p>
+            <p>Profissão: {props.profissao}</p>
+            <p>Contato: {props.contato}</p>
         </section>
     )
 }

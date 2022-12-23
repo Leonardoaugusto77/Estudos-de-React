@@ -9,3 +9,22 @@ os capturando através do PROPS.
 
 É quando um componente em específico retorna algum tipo de função como um slider, controle de acesso, uma alteração
 visual no UI da nossa aplicação e afins!
+
+
+### Utilizando Props
+
+Para usarmos o Props vamos passar atributos para o componenete (propriedades) usamos essa sitaxe:
+
+``` 
+import React from "react";
+import Dados from "./Componentes/Dados";
+
+export default () => {
+
+  return(
+    <>
+     <Dados nome='Leonardo Augusto' profissao='Desenvolvedor Front - end' contato = '@Project_Heisen'/>
+    </>
+  )
+}
+```
