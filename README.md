@@ -39,3 +39,5 @@ Agora dentro de dados para termos acesso ao esse atributos vamos usar `{props.no
 
 ![img](Screenshot_3.png)
 
+![img](Screenshot_4.png)
+
