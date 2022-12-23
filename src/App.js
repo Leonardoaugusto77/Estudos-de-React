@@ -1,15 +1,20 @@
-import React from "react";
-import Relogio from "./Componentes/Relogio";
+import React, { useState } from "react";
+import Numeros from "./Componentes/Numeros";
+
 export default () =>{
+
+
+  const [num, setnum] = useState(0)
+
 
   return(
     <>
 
-      <div className="Container">
-        <Relogio/>
-      </div>
+    <p>Valor do State num em App : {num} </p>
 
-      <p style={{textAlign:'center'}}>Apenas o Componente Relogio irá ser atualizado!</p>
+    <br/>
+
+    <Numeros num={num} setnum={setnum} />
     </>
   )
 }

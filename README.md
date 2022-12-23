@@ -1,31 +1,47 @@
-## Como funciona a renderização de componentes no React
+## O que é o State?
 
-No React é apenas renderizado os componentes que tiveram alteração, assim não é necessário recarregar a página inteira, para dar 
-um exemplo prático eu vou criar um relógio!!!
+ O State é um valor armazenado apenas em memória e que é utilizado pelo seu componente para controlar algum estado da interface, desde mostrar ou esconder um componente, apresentar valores dentro de um input, até guardar dados vindos de uma API, que são utilizados para mostrar alguma informação na interface.
 
-![img](Screenshot_2.png)
-
-Agora dentro do Index.js vamos fazer a chamada que irá atualizar o relógio, estou colocando dentro do Index.js para
-ter a certeza que eu vou estar recarregando todo o nosso App
+ ### Criando um State
 
 ```
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React, { useState } from "react";
 
-function tick(){
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export default () =>{
+
+  const [num, setnum] = useState(0)
+
+  return(
+    <>
+
+    <p>Valor do State num : {num} </p>
+     
+    </>
+  )
 }
-
-setInterval(tick,1000)
 ```
 
-Inspecionando o nosso DOM vamos ver que apenas o local onde o relógio se encontra está sendo atualizado com a chamada da função tick
+Dentro da const temos o nome do estado `num` e a função que vai mudar o estado `setnum` e por ultimo
+vamos dizer que ela recebe o `useState` 
 
-![img](Screenshot_4.png)
+### Função que atualizado o estado 
+
+```
+import React, { useState } from "react";
+
+export default () =>{
+
+  const [num, setnum] = useState(0)
+
+  return(
+    <>
+
+    <p>Valor do State num : {num} </p>
+    <button onClick={()=> setnum(100)}>100</button> 
+    </>
+  )
+}
+```
+
+Dentro de button vamos chamar o onClick com uma arrow function chamando o setnum com o valor de 100 dessa maneria será atualizada 
+o valor na UI da Aplicação. O State é bem simples de ser utilizado, esse Hook é bem cotidiano no Desenvolvimento React
