@@ -1,6 +1,6 @@
 ## Trabalhando com Props no React 
 
-Props são uma maneira de enviarmos valores ou funções para outros componentes. Quando o React vê um elemento represes antado
+Props são uma maneira de enviarmos valores ou funções para outros componentes. Quando o React vê um elemento representado antado
 um componente defino pelo usuário, ele passa atributos do JSX e componentes em si, vamos utilizar os atributos do componente 
 os capturando através do Props.
 
