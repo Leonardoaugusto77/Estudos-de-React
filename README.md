@@ -1,11 +1,11 @@
 ## Como funciona a renderização de componentes no React
 
-No React é apenas renderizado os componentes que tiveram alteração assim não é necessario recarregar a página inteira, para dar 
-um exemplo prático eu vou criar um relogio!!!
+No React é apenas renderizado os componentes que tiveram alteração, assim não é necessário recarregar a página inteira, para dar 
+um exemplo prático eu vou criar um relógio!!!
 
 ![img](Screenshot_2.png)
 
-Agora dentro do Index.js vamos fazer a chamada que irá atualizar o relogio, estou colocando dentro do Index.js para
+Agora dentro do Index.js vamos fazer a chamada que irá atualizar o relógio, estou colocando dentro do Index.js para
 ter a certeza que eu vou estar recarregando todo o nosso App
 
 ```
@@ -26,6 +26,6 @@ root.render(
 setInterval(tick,1000)
 ```
 
-Inspecionando o noss DOM vamos ver que apenas o local onde o relogio se encontra está sendo atualizado com a chamda da função tick
+Inspecionando o nosso DOM vamos ver que apenas o local onde o relógio se encontra está sendo atualizado com a chamada da função tick
 
 ![img](Screenshot_4.png)
