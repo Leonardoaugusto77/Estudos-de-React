@@ -33,3 +33,9 @@ export default () => {
 Agora dentro de dados para termos acesso ao esse atributos vamos usar `{props.nomedoatributo}`
 
 ![img](Screenshot_2.png)
+
+
+### Passando funções e váriaveis para o Props
+
+![img](Screenshot_3.png)
+

@@ -3,9 +3,15 @@ import Dados from "./Componentes/Dados";
 
 export default () => {
 
+  const idade = () =>{
+    return '21 anos'
+  }
+
+  const techs = 'React js & JavaScript'
+
   return(
     <>
-     <Dados nome='Leonardo Augusto' profissao='Desenvolvedor Front - end' contato = '@Project_Heisen'/>
+     <Dados nome='Leonardo Augusto' idade={idade()} profissao='Desenvolvedor Front - end' techs={techs} contato = '@Project_Heisen'/>
     </>
   )
 }
