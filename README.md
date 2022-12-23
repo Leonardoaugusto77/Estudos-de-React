@@ -13,7 +13,8 @@ visual no UI da nossa aplicação e afins!
 
 ### Utilizando Props
 
-Para usarmos o Props vamos passar atributos para o componenete (propriedades) usamos essa sitaxe:
+Para usarmos o Props vamos passar atributos (propriedades) para o componenete que está dentro do nosso App.js 
+usamos a seguinte sitaxe:
 
 ``` 
 import React from "react";
@@ -28,3 +29,7 @@ export default () => {
   )
 }
 ```
+
+Agora dentro de dados para termos acesso ao esse atributos vamos usar `{props.nomedoatributo}`
+
+![img](Screenshot_2.png)
