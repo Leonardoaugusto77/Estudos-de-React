@@ -1,100 +1,116 @@
-## Eventos no React 
+## Renderização condicional
 
-Manipular eventos no React é semelhante ao JavaSript puro, com a diferença de sintaxe. Os eventos são nomeado com camelcase ao invés de letras minusculas, com o JSX você passa uma função como manipulador de eventos no lugar de um texto.
-
-### Criando um evento simples
-
-Vamos criar um evento que vai mudar um led na nossa UI, Verde para ligado e Vermelho para desligado:
+O teste condicional é realizado dependendo de um teste lógico como por exemplo o If...Else.
+Vamos usar de exemplo uma função que cumprimenta o usuario atráves de um teste logico irá renderizar um Bom dia, Boa tarde ou Boa noite!
 
 ```
-import React, { useState } from "react";
-import LedVermelho from './Componentes/Imgs/vermelho.png'
-import LedVerde from './Componentes/Imgs/verde.png'
+import React from 'react'
 
 export default () => {
+  
+  const cumprimentar = () => {
+    const hora = new Date().getHours()
 
-  const [Ligado, setLigado] = useState(false)
-
+    if(hora >= 0 && hora < 13){
+      return <p>Bom dia!</p>
+    } else if(hora >= 13 && hora < 18){
+      return <p>Boa tarde!</p>
+    } else {
+      return <p>Boa noite!</p>
+    }
+  }
+  
   return(
     <>
-     <div className="Container">
-        <div className="leds-box">
-
-        <img className="img-led" src={Ligado ? LedVerde : LedVermelho}/>
-
-        <button onClick={()=> setLigado(!Ligado)}>{Ligado ? 'Ligado' : 'Desligado'}</button>
-        </div>
-     </div>
+      {cumprimentar()}
     </>
   )
 }
 ```
 
-Como é um evento que muda uma parte da nossa aplicação, vamos usar o `useState()`. Dentro do 
-`<button>` vamos colocar um evento `onClick` com expressão já que vamos adicionar um evento JavaScript,
-passamos um Arrow Function para fazer a chamada de `setLigado` passando como `value` o ligado invertido, se o 
-valor for false ele passa a ser true e ser true passa a ser false, assim ligando e desligando o Led!
-
-### Operador Ternario
-
-Dentro de `<button>` temos o operador ternário `<button onClick={()=> setLigado(!Ligado)}>{Ligado ? 'Ligado' : 'Desligado'}</button>`
-que vai alterar a String do botão para ligado ou desligado!
-
-### Como cancelar um comportamente de um Link
-
-Agora vamos estudar como utilizar o `preventDefault()`, ele serve para cancelarmos um comportamento um exemplo, podemos criar um trecho
-de código que identifica se o Usuário preencheu os campos do formulário corretamente, caso não cancelamos a execução e pedimos que ele digite novamente.
+### Exemplo utilizando o useState
 
 ```
-import React, { useState } from "react";
-import Led from "./Componentes/Led";
+import React, { useState } from 'react'
 
 export default () => {
+  
+  const [log, setlog] = useState(false)
 
-  const [Ligado, setLigado] = useState(false)
-
-  const cancela = (obj) =>{
-    obj.preventDefault()
+  const msgLogin = () => {
+      return 'Usuário Logado'
   }
 
+  const msgLoginoff = () => {
+      return 'Usuário Deslogado'
+  }
+
+  const cumprimentar = () => {
+    const hora = new Date().getHours()
+
+    if(hora >= 0 && hora < 13){
+      return <p>Bom dia!</p>
+    } else if(hora >= 13 && hora < 18){
+      return <p>Boa tarde!</p>
+    } else {
+      return <p>Boa noite!</p>
+    }
+  }
+  
   return(
     <>
-     <Led ligar= {Ligado} mudaEstado = {setLigado} cancela={cancela} />
+      {cumprimentar()}
 
-     <br/>
-
-    
+      <h4>{log ? msgLogin() : msgLoginoff()} </h4>
+      <button onClick={()=> setlog(!log)}>{log ? 'Logar' : 'Deslogar'} </button>
     </>
   )
 }
-```  
+```
 
-### Componente Led 
+### Exemplo de Renderização condicional usando Props
+
+```
+ return(
+    <>
+      {cumprimentar()}
+
+      <h4>{log ? msgLogin() : msgLoginoff()} </h4>
+      <button onClick={()=> setlog(!log)}>{log ? 'Logar' : 'Deslogar'} </button>
+
+      <Color cor1 = {Vermelho} cor2 = {Verde} cor3 = {Azul}  setcor= {setCor} statecor = {cor} />
+    </>
+  )
+}
+```
 
 ```
 import React from "react";
-import LedVermelho from './Imgs/vermelho.png'
-import LedVerde from './Imgs/verde.png'
 
 export default (props) => {
 
-  return(
-    <>
-     <div className="Container">
-        <div className="leds-box">
+    const retCor = (c) => {
+        if(c==1){
+            return props.cor1
+        } else if(c==2){
+            return props.cor2
+        } else{
+            return props.cor3
+        }
+    }
 
-        <img className="img-led" src={props.ligar ? LedVerde : LedVermelho}/>
+    const mudarCor = () => {
+        props.setcor(props.statecor+1)
+        if(props.statecor > 2){
+            props.setcor(1)
+        }
+    }
 
-        <button onClick={()=> props.mudaEstado(!props.ligar)}>{props.ligar ? 'Ligado' : 'Desligado'}</button>
-
-        <a href="https://github.com/Leonardoaugusto77/Estudos-de-React/tree/Aula-09-Reactjs" onClick={(e)=> props.cancela(e)}>Link</a>
-        </div>
-     </div>
-    </>
-  )
+    return(
+        <>
+            <h2 style={retCor(props.statecor)}>Leonardo Augusto - Desenvolvedor Front - end</h2>
+            <button onClick={()=> mudarCor()}>Muda cor</button>
+        </>
+    )
 }
 ```
-
-Usamos o `preventDefault()` da seguinte maneira, primeiro passando um parâmetro para a função que irá chama - lo,
-e falamos que o obj recebe o `preventDefault()` `obj.preventDefault()`, agora dentro da função `onClick={(e)=> props.cancela(e)}>` vamos passar o próprio componente como parâmetro que é o `(e)`
-
