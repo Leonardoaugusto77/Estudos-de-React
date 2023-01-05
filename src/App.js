@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default () => {
 
-  const carros = [
-    {categoria: 'Esporte', preco: '110000', modelo: 'Gof GTI'},
-    {categoria: 'Esporte', preco: '1200000', modelo: 'Camaro'},
-    {categoria: 'SUV', preco: '8.50000', modelo: 'HRV'},
-    {categoria: 'Utilitario', preco: '110000', modelo: 'Golf'},
-  ]
- 
+  const [nome, setnome] = useState('')
+  const [carro, setcarro] = useState('')
 
-  const listaCarros = carros.map((c,i) => <p>{i} - {c.categoria}, R${c.preco}, {c.modelo} </p>)
+  const handleChangeNome = (e) => {
+    setnome(e.target.value)
+  }
 
   return(
     <>
-     {listaCarros}
+      <label>Digite seu nome:</label>
+      <input type='text' name='fnome' value={nome} onChange={(e)=> handleChangeNome(e) } />
+      <p>Nome digitado: {nome} </p>
+      <label>Selecione um carro</label>
+      <select values={carro} onChange={(e)=> setcarro(e.target.value)}>
+        <option value='HRV'>HRV</option>
+        <option value='FOX'>FOX</option>
+        <option value='Ford'>Ford</option>
+        <option value='Porsche'>Porsche</option>
+      </select>
+
+      <p>Carro selecionado {carro} </p>
     </>
   )
 }
