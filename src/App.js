@@ -2,27 +2,38 @@ import React, { useState } from 'react'
 
 export default () => {
 
-  const [nome, setnome] = useState('')
-  const [carro, setcarro] = useState('')
+  const [form, setForm] = useState({'nome':'', 'curso': '', 'ano' : ''})
 
-  const handleChangeNome = (e) => {
-    setnome(e.target.value)
+  const handleFormChange = (e) => {
+    if(e.target.getAttribute('name')  == 'fnome' ){
+      setForm({'nome': e.target.value, 'curso' : form.curso, 'ano' : form.ano })
+    } else if (e.target.getAttribute('name')  == 'fcurso'){
+      setForm({'nome' : form.nome, 'curso' : e.target.value, 'ano' : form.ano})
+    } else {
+      setForm({'nome' : form.nome, 'curso' : form.curso, 'ano' : e.target.value })
+    }
   }
 
   return(
     <>
-      <label>Digite seu nome:</label>
-      <input type='text' name='fnome' value={nome} onChange={(e)=> handleChangeNome(e) } />
-      <p>Nome digitado: {nome} </p>
-      <label>Selecione um carro</label>
-      <select values={carro} onChange={(e)=> setcarro(e.target.value)}>
-        <option value='HRV'>HRV</option>
-        <option value='FOX'>FOX</option>
-        <option value='Ford'>Ford</option>
-        <option value='Porsche'>Porsche</option>
-      </select>
+     <div className='Container'>
+      <label>Nome: </label>
+      <input type='text' name='fnome' value={form.nome} onChange={(e) => handleFormChange(e)}></input> <br/>
+      
+      <label>Curso: </label>
+      <input type='text' name='fcurso' value={form.curso} onChange={(e) => handleFormChange(e)}></input> <br/>
+      
+      <label>Ano: </label>
+      <input type='text' name='fano' value={form.ano} onChange={(e) => handleFormChange(e)}></input> <br/>
 
-      <p>Carro selecionado {carro} </p>
+     </div>
+
+
+     <div className='box-1'>
+      <p>Nome digitado: {form.nome} </p>
+      <p>Curso digitado: {form.curso} </p>
+      <p>Ano digitado: {form.ano} </p>
+     </div>
     </>
   )
 }
