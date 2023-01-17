@@ -1,39 +1,20 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
+import Nota from './Componentes/nota1'
+import Resultado from './Componentes/Resultado'
 
 export default () => {
-
-  const [form, setForm] = useState({'nome':'', 'curso': '', 'ano' : ''})
-
-  const handleFormChange = (e) => {
-    if(e.target.getAttribute('name')  == 'fnome' ){
-      setForm({'nome': e.target.value, 'curso' : form.curso, 'ano' : form.ano })
-    } else if (e.target.getAttribute('name')  == 'fcurso'){
-      setForm({'nome' : form.nome, 'curso' : e.target.value, 'ano' : form.ano})
-    } else {
-      setForm({'nome' : form.nome, 'curso' : form.curso, 'ano' : e.target.value })
-    }
-  }
-
+  const [nota1, setnota1] = useState(0)
+  const [nota2, setnota2] = useState(0)
+  const [nota3, setnota3] = useState(0)
+  const [nota4, setnota4] = useState(0)
+  
   return(
     <>
-     <div className='Container'>
-      <label>Nome: </label>
-      <input type='text' name='fnome' value={form.nome} onChange={(e) => handleFormChange(e)}></input> <br/>
-      
-      <label>Curso: </label>
-      <input type='text' name='fcurso' value={form.curso} onChange={(e) => handleFormChange(e)}></input> <br/>
-      
-      <label>Ano: </label>
-      <input type='text' name='fano' value={form.ano} onChange={(e) => handleFormChange(e)}></input> <br/>
-
-     </div>
-
-
-     <div className='box-1'>
-      <p>Nome digitado: {form.nome} </p>
-      <p>Curso digitado: {form.curso} </p>
-      <p>Ano digitado: {form.ano} </p>
-     </div>
+      <Nota num={1} nota={nota1} setnota={setnota1} />
+      <Nota num={2} nota={nota2} setnota={setnota2} />
+      <Nota num={3} nota={nota3} setnota={setnota3} />
+      <Nota num={4} nota={nota4} setnota={setnota4} />
+      <Resultado somaNotas = {parseFloat(nota1)+parseFloat(nota2)+parseFloat(nota3)+parseFloat(nota4)} />
     </>
   )
 }
