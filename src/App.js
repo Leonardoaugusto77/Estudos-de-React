@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Ex from './Componentes/Ex'
 
 export default () => {
 
@@ -12,8 +13,9 @@ export default () => {
   return(
     <>
       <label>Digite seu nome:</label>
-      <input type='text' name='fnome' value={nome} onChange={(e)=> handleChangeNome(e) } />
+       <input type='text' name='fnome' value={nome} onChange={(e)=> handleChangeNome(e) } />
       <p>Nome digitado: {nome} </p>
+
       <label>Selecione um carro</label>
       <select values={carro} onChange={(e)=> setcarro(e.target.value)}>
         <option value='HRV'>HRV</option>
@@ -23,6 +25,11 @@ export default () => {
       </select>
 
       <p>Carro selecionado {carro} </p>
+      <br></br>
+
+      <Ex/>
+
+
     </>
   )
 }
