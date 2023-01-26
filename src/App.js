@@ -16,6 +16,7 @@ export default () => {
 
   return(
     <>
+    
      <div className='Container'>
       <label>Nome: </label>
       <input type='text' name='fnome' value={form.nome} onChange={(e) => handleFormChange(e)}></input> <br/>
