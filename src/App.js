@@ -1,20 +1,26 @@
-import React, {useState} from 'react'
-import Nota from './Componentes/nota1'
-import Resultado from './Componentes/Resultado'
+import React, { useState } from 'react'
+import Nota from './Componentes/Nota'
 
 export default () => {
-  const [nota1, setnota1] = useState(0)
-  const [nota2, setnota2] = useState(0)
-  const [nota3, setnota3] = useState(0)
-  const [nota4, setnota4] = useState(0)
   
+const [nota, setnota] = useState({'nota1' : '', 'nota2' : '' , 'nota4' : '', 'nota5' : ''})
+
+  const handleChange = (e) => {
+    if(e.target.getAttribute == 'notas'){
+      setnota({'nota1' : e.target.value, 'nota2' : '', 'nota4' : '', 'nota5' : ''})
+    } else if((e.target.getAttribute == 'notas2')){
+      setnota({'nota1' : , 'nota2' : '', 'nota4' : '', 'nota5' : ''})
+    }
+  }
+
   return(
     <>
-      <Nota num={1} nota={nota1} setnota={setnota1} />
-      <Nota num={2} nota={nota2} setnota={setnota2} />
-      <Nota num={3} nota={nota3} setnota={setnota3} />
-      <Nota num={4} nota={nota4} setnota={setnota4} />
-      <Resultado somaNotas = {parseFloat(nota1)+parseFloat(nota2)+parseFloat(nota3)+parseFloat(nota4)} />
+
+      <label>Digite sua nota a  baixo</label>
+      <br></br>
+
+      <Nota nota={nota} />
+
     </>
   )
 }
