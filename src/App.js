@@ -1,14 +1,21 @@
-import React from 'react'
-import Caixa from './Componentes/Caixa'
+import React, {useEffect, useState} from 'react'
 
 
 export default () => {
+
+  const [contagem, setcontagem] = useState(0)
+
+  useEffect(
+    ()=> {
+      console.log('Página carregada!')
+      document.title = 'Contagem ' + contagem
+    } 
+  )
+
   return(
     <>
-      <Caixa site="Project_Heisen">
-        <h2>Desenvolvedor Front - end JR</h2>
-        <p>React js Developer</p>
-      </Caixa>
+        <p>Contagem: {contagem} </p>
+        <button onClick={()=> setcontagem(contagem+1)}>Contar</button>
     </>
   )
 }

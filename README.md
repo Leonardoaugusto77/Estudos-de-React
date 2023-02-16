@@ -1,17 +1,16 @@
-## CONTENÇÃO 
+## UseEffect
 
-Com a contenção podemos manipular o passar outros elementos, temos esse recurso pelo motivo que as vezes não conseguimos saber quem são
-os elementos filhos de outro elemento, ele é props especial. Será um Array contendo os elementos filhos do elemento que estão manipulando
+O useEffect é chamado toda vez que a página é atualizada e montada
 
-Através do `{props.children}` Vamos obter os elementos filhos que foram passadas como atributos do nossos componentes:
+```
+useEffect(
+    ()=> {
+      console.log('Página carregada!')
+      document.title = 'Contagem ' + contagem
+    } 
+  )
 
 ```
 
-    <Caixa site="Project_Heisen">
-        <h2>Desenvolvedor Front - end JR</h2>
-        <p>React js Developer</p>
-    </Caixa>
-
-```
-
-`{props.children[0]}` é um array se usarmos a `[0]` podemos obter elementos separados
+O useEffect guarda as informações que ele tem que executar, quanto o state é atualizado ele att a página e assim o useEffect é executado
+isso gera um pequeno delay, ele pode ser usado em componentes funcionais e hooks personalizados, não é possivel usr em componentes de classe
