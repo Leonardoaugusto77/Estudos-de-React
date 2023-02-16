@@ -1,16 +1,10 @@
-## UseEffect
+## LocalStorage 
 
-O useEffect é chamado toda vez que a página é atualizada e montada
-
-```
-useEffect(
-    ()=> {
-      console.log('Página carregada!')
-      document.title = 'Contagem ' + contagem
-    } 
-  )
+O LocalStorage armazena valores na sessão do nosso Browser, dentro do repositorio de revisao de JavaScript na pasta Aula 12, tem mais detalhes do seu uso!
 
 ```
+  localStorage.setItem("Nome", "Bruno") // Cria uma chave
+  localStorage.getItem('nome') // Pega a chave desejada
+  localStorage.removeItem() // Remove a chave desejada
 
-O useEffect guarda as informações que ele tem que executar, quanto o state é atualizado ele att a página e assim o useEffect é executado
-isso gera um pequeno delay, ele pode ser usado em componentes funcionais e hooks personalizados, não é possivel usr em componentes de classe
+```
