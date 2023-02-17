@@ -41,6 +41,21 @@ export default class Carro extends React.Component{ // está herdando do React.c
         )
     }
 
+    componentWillUnmount(){ // é chamado toda vez que o componente for removido
+        console.log('O carro foi removido!')
+    }
+
+
+    componentDidMount(){ // só chamado uma vez após o render
+        console.log("O carro foi criado!")
+    }
+
+    componentDidUpdate(){ // é chamado toda vez que o carro é atualizado
+        console.log('O carro foi atualizado!')
+    }
+
+ 
+
     render(){
         return(
             <>
@@ -53,6 +68,8 @@ export default class Carro extends React.Component{ // está herdando do React.c
                 <button onClick={this.ld}>{this.state.ligado === true ?  'Ligar carro' : 'Desligar carro'}</button>
 
                 <button onClick={()=> this.acelerar()}>acelerar</button>
+               
+              
             </>
         )
     }
