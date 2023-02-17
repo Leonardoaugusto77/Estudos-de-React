@@ -8,8 +8,9 @@ export default class Carro extends React.Component{ // está herdando do React.c
         this.state = {
             ligado: false,
             velAtual: 0,
-
         }
+
+        this.ld = this.ligaredesligar.bind(this) // Deixa a chamada mais simplificada
     }
 
     ligar(){
@@ -49,7 +50,7 @@ export default class Carro extends React.Component{ // está herdando do React.c
 
                 <br></br>
 
-                <button onClick={()=> this.ligaredesligar()}>{this.state.ligado === true ?  'Ligar carro' : 'Desligar carro'}</button>
+                <button onClick={this.ld}>{this.state.ligado === true ?  'Ligar carro' : 'Desligar carro'}</button>
 
                 <button onClick={()=> this.acelerar()}>acelerar</button>
             </>
