@@ -1,61 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Globais from './Componentes/Globais' // Temos que importar as globais como qualquer outro componente 
+import Info from './Componentes/info'
+import info from './Componentes/info'
 
+export default () => {
 
-export default class BaseClasse extends React.Component{ // Criando o componente de classe
-    constructor(props){ // Metodo que é chamado automaticamente quando criamos o componente
-        // Para permitir o uso de props
-        super(props) // Vai passar o props para a classe que está sendo extendido (passa o conteudo para o  React.Component)
-        
+    const [resumo, setresumo] = useState(Globais.dataDeInicio)
 
-        // Usando State
-        this.state = { // maneira de criar os states no class
-            nome: 'Leonardo Augusto',
-            profissao: 'Desenvolvedor Front - end jr',
-            ativo: true,
-            nomeP: this.props.NomeAluno
-        }
-        
-
-        this.status = this.props.status // trabalhando com props
-
-        //Blindagem
-        let ad = this.ativarDestivar.blind(this)
-
-
-        // Instruções do construtor
+    const gravarResumo = () =>{
+        Globais.resumo = resumo
     }
 
-
-    // Função para manipular state
-
-    ativarDestivar(){ // setstate de class
-        this.setState(
-            state=>({
-                ativo :! state.ativo
-            })
-        )
+    const verResumo = () => {
+        alert(Globais.resumo)
     }
 
-    componentWillUnmount(){ // é chamado toda vez que o componente for removido
-        console.log('O carro foi removido!')
-    }
+    return(
+        <> 
 
-
-    componentDidMount(){ // só chamado uma vez após o render
-        console.log("O carro foi criado!")
-    }
-
-    componentDidUpdate(){ // é chamado toda vez que o carro é atualizado
-        console.log('O carro foi atualizado!')
-    }
-
-    render(){
-        return(
-            <>
-                <h1>Componente de classe</h1>
-                
-            </>
-        )
-    }
-
+            <Info/>
+            <hr/>
+            <p> {'Nome: ' + Globais.Nome} </p> 
+            <p> {'Profissão: ' + Globais.Profissao} </p>
+            <p> {'Salario: ' + Globais.Salario} </p>
+            <hr/>
+            <input type='text' value={resumo} onChange={(e)=> setresumo(e.target.value)}/>
+            <br></br>
+            <button onClick={()=> gravarResumo()}>Gravar resumo</button>
+            <button onClick={()=> verResumo()}>Ver resumo</button>
+           
+        </>
+    )
 }
