@@ -1,34 +1,45 @@
-import React, { useState } from 'react'
-import Globais from './Componentes/Globais' // Temos que importar as globais como qualquer outro componente 
-import Info from './Componentes/info'
-import info from './Componentes/info'
+import React,{useState, useEffect} from "react";
+import Pagina01 from "./Componentes/Pagina01";
+import Pagina02 from "./Componentes/Pagina02";
+
 
 export default () => {
 
-    const [resumo, setresumo] = useState(Globais.dataDeInicio)
+    const [pagina, setpagina] = useState(0)
 
-    const gravarResumo = () =>{
-        Globais.resumo = resumo
+    useEffect( // depois que eu carregar a pagina preciso verificar o paramentro que está vindo para redenrizar o componente
+        ()=> {
+            const url = window.location.href // pega url            const res = url.split('?')
+            setpagina(res[1])
+        }
+    )
+
+
+    const linksP = (p) => {
+        if(p == 1){
+            window.open('http://localhost:3000/?1' , '_self') // Usamos ? para passagem de paramentros
+        } else if( p == 2){
+            window.open('http://localhost:3000/?2' , '_self') // Usamos ? para passagem de paramentros
+        }
     }
 
-    const verResumo = () => {
-        alert(Globais.resumo)
+    const retornarP = () => {
+        if(pagina == 1){
+            return <Pagina01/>
+        } else if(pagina == 2){
+            return <Pagina02/>
+        } else {
+           return <div>
+           
+                    <button onClick={()=> linksP(1)} >Página 01</button>
+                    <button onClick={()=> linksP(2)} >Página 02</button>
+                </div>
+        }
     }
 
     return(
-        <> 
-
-            <Info/>
-            <hr/>
-            <p> {'Nome: ' + Globais.Nome} </p> 
-            <p> {'Profissão: ' + Globais.Profissao} </p>
-            <p> {'Salario: ' + Globais.Salario} </p>
-            <hr/>
-            <input type='text' value={resumo} onChange={(e)=> setresumo(e.target.value)}/>
-            <br></br>
-            <button onClick={()=> gravarResumo()}>Gravar resumo</button>
-            <button onClick={()=> verResumo()}>Ver resumo</button>
-           
+        <>
+            {retornarP()}
         </>
     )
 }

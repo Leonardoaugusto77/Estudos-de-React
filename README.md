@@ -1,4 +1,4 @@
-## Variáveis Globais Static em React
+## Navegando entre telas de forma nativa em React
 
-Static fazem que eles tem o mesmo endereço de memoria 
+
 
