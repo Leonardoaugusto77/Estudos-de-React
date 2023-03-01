@@ -1,45 +1,88 @@
-import React,{useState, useEffect} from "react";
-import Pagina01 from "./Componentes/Pagina01";
-import Pagina02 from "./Componentes/Pagina02";
-
+import { useState } from "react";
+import React from "react";
+import Filter from "./Componentes/Filter";
 
 export default () => {
+  const [categoria, setcategoria] = useState("");
 
-    const [pagina, setpagina] = useState(0)
-
-    useEffect( // depois que eu carregar a pagina preciso verificar o paramentro que está vindo para redenrizar o componente
-        ()=> {
-            const url = window.location.href // pega url            const res = url.split('?')
-            setpagina(res[1])
-        }
-    )
-
-
-    const linksP = (p) => {
-        if(p == 1){
-            window.open('http://localhost:3000/?1' , '_self') // Usamos ? para passagem de paramentros
-        } else if( p == 2){
-            window.open('http://localhost:3000/?2' , '_self') // Usamos ? para passagem de paramentros
-        }
+  const carros = [
+    {
+      categoria: "Esporte",
+      preco: "11000",
+      modelo: "Golf GTI",
+    },
+    {
+      categoria: "Esporte",
+      preco: "12000",
+      modelo: "Camaro",
+    },
+    {
+      categoria: "SUV",
+      preco: "85000",
+      modelo: "HRV",
+    },
+    {
+      
+      categoria: "SUV",
+      preco: "83000",
+      modelo: "T - Cross",
+    },
+    { 
+      categoria: "Utilitario",
+      preco: "125000",
+      modelo: "Hilux",
+    },
+    {
+      categoria: "Utilitario",
+      preco: "90000",
+      modelo: "Ranger",
     }
+  ];
 
-    const retornarP = () => {
-        if(pagina == 1){
-            return <Pagina01/>
-        } else if(pagina == 2){
-            return <Pagina02/>
-        } else {
-           return <div>
-           
-                    <button onClick={()=> linksP(1)} >Página 01</button>
-                    <button onClick={()=> linksP(2)} >Página 02</button>
-                </div>
-        }
-    }
+  const line = (c) => {
+    const li = [];
+    carros.forEach((carro) => {
+      if (
+        carro.categoria.toUpperCase()===c.toUpperCase() ||
+        c.toUpperCase() === ""
+      ) {
+        li.push(
+          <tr>
+            <td>{carro.categoria}</td>
+            <td>{carro.preco}</td>
+            <td>{carro.modelo}</td>
+          </tr>
+        );
+      }
+    });
 
-    return(
-        <>
-            {retornarP()}
-        </>
-    )
-}
+    return li;
+  };
+
+  const table = (c) => {
+    return (
+      <>
+      <table border="1" style={{ borderCollapse: "collapse" }}>
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Modelo</th>
+          </tr>
+        </thead>
+
+        <tbody>{line(c)}</tbody>
+      </table>
+
+      <br></br>
+
+      <Filter c={c} setc={setcategoria} />
+  </>
+    );
+   
+  };
+
+  
+
+  return <>{table(categoria)}</>;
+};
