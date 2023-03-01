@@ -1,7 +1,5 @@
 import React from "react";
 
 export default () => {
-  return(
-    <></>
-  )
-}
+  return <>Olá , isso é um teste</>;
+};
