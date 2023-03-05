@@ -1,88 +1,25 @@
-import { useState } from "react";
-import React from "react";
-import Filter from "./Componentes/Filter";
+import React, { useState } from "react";
+import TabeladePesos from "./Componentes/TabeladePesos";
+import CalculodePeso from "./Componentes/CalculodePeso";
+import CSS from './index.css'
 
 export default () => {
-  const [categoria, setcategoria] = useState("");
+  const [peso, setPeso] = useState();
+  const [altura, setAltura] = useState();
 
-  const carros = [
-    {
-      categoria: "Esporte",
-      preco: "11000",
-      modelo: "Golf GTI",
-    },
-    {
-      categoria: "Esporte",
-      preco: "12000",
-      modelo: "Camaro",
-    },
-    {
-      categoria: "SUV",
-      preco: "85000",
-      modelo: "HRV",
-    },
-    {
-      
-      categoria: "SUV",
-      preco: "83000",
-      modelo: "T - Cross",
-    },
-    { 
-      categoria: "Utilitario",
-      preco: "125000",
-      modelo: "Hilux",
-    },
-    {
-      categoria: "Utilitario",
-      preco: "90000",
-      modelo: "Ranger",
-    }
-  ];
+  return (
+    <>
+      <div className="Container">
+        <h1>Calculadora IMC</h1>
 
-  const line = (c) => {
-    const li = [];
-    carros.forEach((carro) => {
-      if (
-        carro.categoria.toUpperCase()==c.toUpperCase() ||
-        c.toUpperCase() == ""
-      ) {
-        li.push(
-          <tr>
-            <td>{carro.categoria}</td>
-            <td>{carro.preco}</td>
-            <td>{carro.modelo}</td>
-          </tr>
-        );
-      }
-    });
+        <TabeladePesos />
 
-    return li;
-  };
 
-  const table = (c) => {
-    return (
-      <>
-      <table border="1" style={{ borderCollapse: "collapse" }}>
-        <thead>
-          <tr>
-            <th>Categoria</th>
-            <th>Preço</th>
-            <th>Modelo</th>
-          </tr>
-        </thead>
+      <div className="Resultado">
+        <CalculodePeso varP={peso} varSetP={setPeso} varA={altura} varSetA={setAltura} />
+      </div>
 
-        <tbody>{line(c)}</tbody>
-      </table>
-
-      <br></br>
-
-      <Filter c={c} setc={setcategoria} />
-  </>
-    );
-   
-  };
-
-  
-
-  return <>{table(categoria)}</>;
+      </div>
+    </>
+  );
 };
