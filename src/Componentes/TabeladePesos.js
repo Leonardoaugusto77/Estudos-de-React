@@ -1,9 +1,12 @@
-import React from "react";
-
 export default () => {
+
+  const espacamento = {
+    marginBottom : '15px'
+  }
+
   return (
     <>
-      <table border="1" style={{ borderCollapse: "collapse" }}>
+      <table border="1" style={{ borderCollapse: "collapse" }} style={espacamento}>
         <thead>
           <th>
             <td>Classificação</td>
