@@ -43,8 +43,8 @@ export default () => {
     const li = [];
     carros.forEach((carro) => {
       if (
-        carro.categoria.toUpperCase()===c.toUpperCase() ||
-        c.toUpperCase() === ""
+        carro.categoria.toUpperCase()==c.toUpperCase() ||
+        c.toUpperCase() == ""
       ) {
         li.push(
           <tr>
