@@ -1,147 +1,143 @@
 import React, { useState } from "react";
 
 export default () => {
-  const [valorTela, setValorTela] = useState('')
-  const [resultado, setResultado] = useState()
-  const [acumulador, setAcumulador] = useState(0)
-  const [operado, setOperado] = useState(false)
+
+  // Estilos
+
+  const tabu = {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+
+  const tabuLinha = {
+    display: 'flex',
+    flexDirection: 'row'
+  }
+
+  const casa = {
+    width: 100,
+    minHeight: 100,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    cursor: 'pointer',
+    fontSize: 60,
+    border: '1px solid #000'
+  }
 
 
-  // Elementos visuais
-  const Tela = (valor, res) => {
+  const jogoInicial = [
+    ['', '', ''],
+    ['', '', ''], // Visualização básica do jogo
+    ['', '', '']
+  ]
+  const [jogo, setJogo] = useState(jogoInicial)
+  const [simboloAtual, setSimboloAtual] = useState('X')
+  const [jogando, setJogando] = useState(true)
+
+  const tabuleiro = (j) => {
     return (
-      <div style={cssTela}>
-        <span style={cssTelaOper}>{valor}</span>
-        <span style={cssTelaRes}>{res}</span>
+      <div style={tabu}>
+        <div style={tabuLinha}>
+          <div style={casa} data-pos='00' onClick={(e)=>joga(e)}>{j[0][0]}</div>
+          <div style={casa} data-pos='01' onClick={(e)=>joga(e)}>{j[0][1]}</div>
+          <div style={casa} data-pos='02' onClick={(e)=>joga(e)}>{j[0][2]}</div>
+        </div>
+        <div style={tabuLinha}>
+          <div style={casa} data-pos='10' onClick={(e)=>joga(e)}>{j[1][0]}</div>
+          <div style={casa} data-pos='11' onClick={(e)=>joga(e)}>{j[1][1]}</div>
+          <div style={casa} data-pos='12' onClick={(e)=>joga(e)}>{j[1][2]}</div>
+        </div>
+        <div style={tabuLinha}>
+          <div style={casa} data-pos='20' onClick={(e)=>joga(e)}>{j[2][0]}</div>
+          <div style={casa} data-pos='21' onClick={(e)=>joga(e)}>{j[2][1]}</div>
+          <div style={casa} data-pos='22' onClick={(e)=>joga(e)}>{j[2][2]}</div>
+        </div>
       </div>
     )
   }
 
-  const btn = (label, onClick) => {
-    return (
-      <button style={cssBtn} onClick={onClick} >{label}</button>
-    )
-  }
-
-  // Funções
-  const addDigitoTela = (d) => {
-    if ((d === '+' || d === '-' || d === '*' || d === '/') && operado) {
-      console.log('+-*/')
-      setOperado(false)
-      setValorTela(resultado + d)
-      return
-    } else if (operado) {
-      setValorTela(d)
-      setOperado(false)
-      return
+  const BtnJogarNovamente = () => {
+    if (!jogando) {
+      return <button onClick={()=> iniciar()}>Jogar Novamente!</button>
     }
-    const valorDigitadoTela = valorTela + d
-    setValorTela(valorDigitadoTela)
+
   }
 
-  const limparMemoria = () => {
-    setOperado(false)
-    setValorTela('')
-    setResultado(0)
-    setAcumulador(0)
-    return
-  }
-
-  const Operacao = (oper) => {
-    if (oper == 'bs') {
-      let vtela = valorTela
-      vtela = vtela.substring(0, (vtela.length - 1))
-      setValorTela(vtela)
-      setOperado(false)
-      return
+  const verificaVitoria = () => {
+    let pontosDiag1 = 0;
+    let pontosDiag2 = 0;
+    for (let i=0; i<3; i++) {
+      let pontosLin = 0;
+      let pontosCol = 0;
+      for (let j=0; j<3; j++) {
+        if (jogo[i][j] == simboloAtual) pontosLin++;
+        if (jogo[j][i] == simboloAtual) pontosCol++;
+        if ( (i == j) && (jogo[i][j] == simboloAtual) )     pontosDiag1++;
+        if ( (i == 2-j) && (jogo[i][j] == simboloAtual) ) pontosDiag2++;
+      }
+      if (pontosLin >= 3 || pontosCol >= 3) return true
     }
-    try {
-      const r = eval(valorTela) // calc
-      setAcumulador(r)
-      setResultado(r)
-      setOperado(true)
-    } catch {
-      setResultado('ERRO!!!')
+    if (pontosDiag1 >= 3 || pontosDiag2 >= 3) return true
+    return false
+  }
+
+  const trocaJogador = () => {
+    simboloAtual == 'X' ? setSimboloAtual('O') : setSimboloAtual('X')
+  }
+
+  const retornaPosicao = (e) => {
+    const p = e.target.getAttribute('data-pos')
+    const pos = [parseInt(p.substring(0, 1), parseInt(p.substring(1, 2)))]
+    return pos
+  }
+
+  const verificaEspacoVazio = (e) => {
+    if (jogo[retornaPosicao(e)[0]] || [retornaPosicao(e)[1] == '']) {
+      return true
+    } else {
+      return false
     }
   }
 
-  // Estilos
-  const CSScontainer = {
-    width: 300,
-    margin: 'auto',
-    border: '1px solid #000',
-    textAlign: 'center'
+  const joga = (e) => {
+    if (jogando) {
+      if (verificaEspacoVazio(e)) {
+        jogo[retornaPosicao(e)[0]] [retornaPosicao(e)[1]] = simboloAtual
+        trocaJogador()
+        if (verificaVitoria(e)) {
+          trocaJogador()
+          alert('Jogador ' + simboloAtual + 'Venceu!')
+          setJogando(false)
+        }
+      } else {
+        alert('Esse espaço está em uso')
+      }
+    }
   }
 
-  const cssBotoes = {
-    flexDirection: 'row',
-    flexWrap: 'wrap'
-  }
 
-  const cssTela = {
-    display: 'flex',
-    paddingLeft: 20,
-    paddingRight: 20,
-    justifyContent: 'center',
-    alingItems: 'flex-start',
-    backgroundColor: '#444',
-    flexDirection: 'column',
-    height: '75px',
-    width: 260
-  }
-
-  const cssTelaOper = {
-    fontSize: 25,
-    color: '#fff',
-    height: 20,
-  }
-
-  const cssTelaRes = {
-    fontSize: 50,
-    color: '#fff'
-  }
-
-  const cssBtn = {
-    fontSize: 30,
-    height: 75,
-    width: 75,
-    backgroundColor: '#000',
-    color: '#fff',
-    borderColor: '#000',
-    textAlign: 'center',
+  const iniciar = () => {
+    setJogando(true)
+    setJogo(jogoInicial)
+    setSimboloAtual('X')
   }
 
 
   return (
-    <div style={CSScontainer}>
+    <>
 
-      <h3>Calculadora com React js</h3>
-
-      {Tela(valorTela, resultado)}
-
-      <div style={cssBotoes}>
-        {btn('AC', limparMemoria)}
-        {btn('(', () => addDigitoTela('('))}
-        {btn(')', () => addDigitoTela(')'))}
-        {btn('/', () => addDigitoTela('/'))}
-        {btn('7', () => addDigitoTela('7'))}
-        {btn('8', () => addDigitoTela('8'))}
-        {btn('9', () => addDigitoTela('9'))}
-        {btn('*', () => addDigitoTela('*'))}
-        {btn('4', () => addDigitoTela('4'))}
-        {btn('5', () => addDigitoTela('5'))}
-        {btn('6', () => addDigitoTela('6'))}
-        {btn('-', () => addDigitoTela('-'))}
-        {btn('1', () => addDigitoTela('1'))}
-        {btn('2', () => addDigitoTela('2'))}
-        {btn('3', () => addDigitoTela('3'))}
-        {btn('+', () => addDigitoTela('+'))}
-        {btn('0', () => addDigitoTela('0'))}
-        {btn('.', () => addDigitoTela('.'))}
-        {btn('<-', () => Operacao('bs'))}
-        {btn('=', () => Operacao('='))}
-      </div>
-
+    <div>
+      <p>Quem joga: {simboloAtual}</p>
     </div>
+    <div>
+      {tabuleiro(jogo)}
+    </div>
+    <div>
+      {BtnJogarNovamente()}
+    </div>
+
+    </>
   )
 }
